@@ -27,7 +27,9 @@
     textarea{
         background:#000;
         color:#fff;
-        outline:none;}
+        outline:none;
+        width:420px;
+        height:18px;}
     .inline{display:inline}
     </style>
 </head>
@@ -38,8 +40,8 @@
         <option value=1>image</option>
         <option value=2>filling</option>
     </select></pre>
-    <div id="mode_0"><button onclick="text0link1=false;">enter text</button><pre class="inline"> or </pre><button onclick="text0link1=true;">paste a link</button><pre class="inline"> to a text file (default text): </pre><br>
-    <textarea id="text"></textarea>
+    <button onclick="text0link1=false;">enter text</button><pre class="inline"> or </pre><button onclick="text0link1=true;">paste a link</button><pre class="inline"> to a text file (default text): </pre><br><textarea id="text"></textarea>
+    <div id="mode_0"></div>
     <div id="mode_1"><pre>of</pre></div>
     <div id="mode_2"><pre>this</pre></div>
     <script type="text/javascript">
