@@ -1,0 +1,69 @@
+<!doctype html>
+<head>
+    <meta charset=utf-8">
+    <title>subpixel text</title>
+    <style>
+    *{
+    margin:0;
+    padding:0;}
+    body{
+        background:#000;
+        color:#fff;
+        text-transform:uppercase;}
+    select{
+        -moz-appearance:none;
+        border:none;
+        outline:none;
+        background:#000;
+        color:#f00;
+        text-transform:uppercase;
+        cursor:pointer;}
+    button{
+        background:#000;
+        color:#f00;
+        text-transform:uppercase;
+        border:none;
+        cursor:pointer;}
+    textarea{
+        display:none;
+        background:#000;
+        color:#fff;
+        outline:none;}
+    .inline{display:inline}
+    </style>
+</head>
+<body>
+    <noscript><pre>You need to enable JavaScript to use this site</pre><br></noscript>
+    <pre>subpixel text generator<br>choice mode:<select id="mode">
+        <option value=0>string</option>
+        <option value=1>image</option>
+        <option value=2>filling</option>
+    </select></pre>
+    <div id="mode_0"><button onclick="button1Click()">enter text</button><pre class="inline"> or </pre><button onclick="button2Click()">paste a link</button><pre class="inline"> to a text file: </pre><br>
+    <textarea id="text"></textarea><textarea id="link_to_text"></textarea></div>
+    <div id="mode_1"><pre>of</pre></div>
+    <div id="mode_2"><pre>this</pre></div>
+    <script type="text/javascript">
+        function button1Click(){
+            document.getElementById('text').style.display='block';
+            document.getElementById('link_to_text').style.display='none';}
+        function button2Click(){
+            document.getElementById('text').style.display='none';
+            document.getElementById('link_to_text').style.display='block';}
+        const search=window.location.search
+        const params=new URLSearchParams(search)
+        const selectMode=newMode=>{
+            document.getElementById('mode').value=newMode
+            document.getElementById('mode_0').style.display=newMode===0?'block':'none'
+            document.getElementById('mode_1').style.display=newMode===1?'block':'none'
+            document.getElementById('mode_2').style.display=newMode===2?'block':'none'
+        }
+        var mode=+params.get("mode")||0
+        selectMode(mode)
+        document.getElementById('mode').addEventListener('change',e=>{
+            mode=+(e.target.value)
+            selectMode(mode)
+        });
+    </script>
+</body>
+</html>
