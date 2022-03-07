@@ -25,7 +25,6 @@
         border:none;
         cursor:pointer;}
     textarea{
-        display:none;
         background:#000;
         color:#fff;
         outline:none;}
@@ -39,17 +38,12 @@
         <option value=1>image</option>
         <option value=2>filling</option>
     </select></pre>
-    <div id="mode_0"><button onclick="button1Click()">enter text</button><pre class="inline"> or </pre><button onclick="button2Click()">paste a link</button><pre class="inline"> to a text file: </pre><br>
-    <textarea id="text"></textarea><textarea id="link_to_text"></textarea></div>
+    <div id="mode_0"><button onclick="text0link1=false;">enter text</button><pre class="inline"> or </pre><button onclick="text0link1=true;">paste a link</button><pre class="inline"> to a text file (default text): </pre><br>
+    <textarea id="text"></textarea>
     <div id="mode_1"><pre>of</pre></div>
     <div id="mode_2"><pre>this</pre></div>
     <script type="text/javascript">
-        function button1Click(){
-            document.getElementById('text').style.display='block';
-            document.getElementById('link_to_text').style.display='none';}
-        function button2Click(){
-            document.getElementById('text').style.display='none';
-            document.getElementById('link_to_text').style.display='block';}
+        var text0link1=false;
         const search=window.location.search
         const params=new URLSearchParams(search)
         const selectMode=newMode=>{
@@ -67,4 +61,3 @@
     </script>
 </body>
 </html>
-если щас заставит логиниться, то я буду бомбить
