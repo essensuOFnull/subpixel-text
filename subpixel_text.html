@@ -10,6 +10,7 @@
         background:#000;
         color:#fff;
         text-transform:uppercase;}
+    pre{display:inline;}
     select{
         -moz-appearance:none;
         border:none;
@@ -39,8 +40,10 @@
         <option value=0>string</option>
         <option value=1>image</option>
         <option value=2>filling</option>
-    </select></pre>
-    <button onclick="text0link1=false;">enter text</button><pre class="inline"> or </pre><button onclick="text0link1=true;">paste a link</button><pre class="inline"> to a text file (default text): </pre><br><textarea id="text"></textarea>
+    </select></pre><br>
+    <button onclick="text0link1=false;">enter text</button><pre> or </pre><button onclick="text0link1=true;">paste a link</button><pre> to a text file (default text):</pre><br><textarea id="text"></textarea><br>
+    <pre>paste a link to a font:</pre><br><textarea id="font"></textarea><br>
+    <pre>font preview</pre><input type="checkbox" id="font_preview"></input>
     <div id="mode_0"></div>
     <div id="mode_1"><pre>of</pre></div>
     <div id="mode_2"><pre>this</pre></div>
@@ -50,9 +53,9 @@
         const params=new URLSearchParams(search)
         const selectMode=newMode=>{
             document.getElementById('mode').value=newMode
-            document.getElementById('mode_0').style.display=newMode===0?'block':'none'
-            document.getElementById('mode_1').style.display=newMode===1?'block':'none'
-            document.getElementById('mode_2').style.display=newMode===2?'block':'none'
+            document.getElementById('mode_0').style.display=newMode===0?'inline':'none'
+            document.getElementById('mode_1').style.display=newMode===1?'inline':'none'
+            document.getElementById('mode_2').style.display=newMode===2?'inline':'none'
         }
         var mode=+params.get("mode")||0
         selectMode(mode)
