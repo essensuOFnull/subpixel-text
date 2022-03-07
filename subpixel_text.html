@@ -25,6 +25,8 @@
         text-transform:uppercase;
         border:none;
         cursor:pointer;}
+    input[type=checkbox]{
+        accent-color: red;}
     textarea{
         background:#000;
         color:#fff;
@@ -43,7 +45,8 @@
     </select></pre><br>
     <button onclick="text0link1=false;">enter text</button><pre> or </pre><button onclick="text0link1=true;">paste a link</button><pre> to a text file (default text):</pre><br><textarea id="text"></textarea><br>
     <pre>paste a link to a font:</pre><br><textarea id="font"></textarea><br>
-    <pre>font preview</pre><input type="checkbox" id="font_preview"></input>
+    <label for="font_preview"><pre>font preview</pre></label>
+    <input type="checkbox" id="font_preview"></input>
     <div id="mode_0"></div>
     <div id="mode_1"><pre>of</pre></div>
     <div id="mode_2"><pre>this</pre></div>
