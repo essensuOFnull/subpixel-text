@@ -34,7 +34,6 @@
         width:500px;
         height:20px;
         border-width:1px;}
-    .inline{display:inline}
     </style>
 </head>
 <body>
@@ -47,11 +46,20 @@
     <button onclick="text0link1=false;"><pre>enter text</pre></button><pre> or </pre><button onclick="text0link1=true;"><pre>paste a link</pre></button><pre> to a text file (default text):</pre><br><textarea id="text"></textarea><br>
     <pre>paste a link to a font:</pre><br><textarea id="font"></textarea><br>
     <pre>font preview </pre><input type="checkbox" id="font_preview"></input><br>
-    <button><pre> - </pre></button><button><pre> + </pre></button><pre>list of areas:</pre>
+    <button id="AddArea" onclick="AddArea();"><pre> + </pre></button><pre>list of areas:</pre><br>
+    <div id="Area_0"></div>
     <div id="mode_0"></div>
     <div id="mode_1"></div>
     <div id="mode_2"></div>
     <script type="text/javascript">
+        function AddArea(){
+            CountOfAreas++;
+            var area=document.createElement("div");
+            area.innerHTML="<pre>test</pre>";
+            var my_div=document.getElementById("org_div1");
+            document.body.insertAfter(area,my_div);}
+        
+        var CountOfAreas=1;
         var text0link1=false;
         const search=window.location.search
         const params=new URLSearchParams(search)
