@@ -3,9 +3,6 @@
     <meta charset=utf-8">
     <title>subpixel text</title>
     <style>
-    @font-face {
-        font-family:"Terminus"!important;
-        src:url(Terminus.ttf);}
     *{
     margin:0;
     padding:0;}
@@ -13,7 +10,7 @@
         background:#000;
         color:#fff;
         text-transform:uppercase;}
-    pre{display:inline;font-family:Terminus;font-size:16px;}
+    pre{display:inline;font-size:16px;}
     select{
         -moz-appearance:none;
         border:none;
@@ -21,13 +18,15 @@
         background:#000;
         color:#f00;
         text-transform:uppercase;
-        cursor:pointer;}
+        cursor:pointer;
+        font-family:inherit;}
     button{
         background:#000;
         color:#f00;
         text-transform:uppercase;
         border:none;
-        cursor:pointer;}
+        cursor:pointer;
+        font-family:inherit;}
     input[type=checkbox]{
         accent-color: red;}
     textarea{
@@ -46,10 +45,10 @@
         <option value=1>image</option>
         <option value=2>filling</option>
     </select></pre><br>
-    <button onclick="text0link1=false;"><pre>enter text</pre></button><pre> or </pre><button onclick="text0link1=true;"><pre>paste a link</pre></button><pre> to a text file (default text):</pre><br><textarea id="text"></textarea><br>
+    <button onclick="text0link1=false;">enter text</button><pre> or </pre><button onclick="text0link1=true;">paste a link</button><pre> to a text file (default text):</pre><br><textarea id="text"></textarea><br>
     <pre>paste a link to a font:</pre><br><textarea id="font"></textarea><br>
     <pre>font preview </pre><input type="checkbox" id="font_preview"></input><br>
-    <button id="AddArea" onclick="AddArea();"><pre> + </pre></button><pre>list of areas:</pre><br>
+    <button id="AddArea" onclick="AddArea();"> + </button><pre>list of areas:</pre><br>
     <div id="Area_0"></div>
     <div id="mode_0"></div>
     <div id="mode_1"></div>
